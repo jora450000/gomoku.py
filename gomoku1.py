@@ -163,17 +163,7 @@ def cost_go(x1,y1,a, playG):
                                cost=max(cost,400)
                         elif sec==[0,playG,0,playG,playG,playG,0]:
                                cost=max(cost,400)
-    #    elif sec==[0,playG,playG,playG,playG,playG,0]:
-         #           print "0 p 0 p p p 0", sec
-        #           cost=max(cost,500)
-    #    elif sec==[playG,playG,playG,playG,playG,playG,0]:
-         #           print "0 p 0 p p p 0", sec
-        #           cost=max(cost,500)
-
-
-
-
-
+  
 
 #6 seq
 
@@ -204,23 +194,23 @@ def cost_go(x1,y1,a, playG):
 #4 seq
 
              if (cost < 100) and in_sequence(x1,y1,x,y,i,j,4):
-                        sec = sequence(a,x,y,i,j,4)
-                        if sec==[playG,antiplayG,antiplayG,antiplayG]:
-                            cost = max(cost,100)
-                        elif sec==[playG,antiplayG,antiplayG,antiplayG]:
-                            cost = max(cost,100)
-                        elif x>0 and y > 0 and sec==[antiplayG,playG,antiplayG,antiplayG]:
-                            cost = max(cost,100)
-                        elif  x> 0 and y> 0  and  sec==[antiplayG,antiplayG,playG,antiplayG]:
-                    	    cost = max(cost,100)
-                        elif sec==[playG,antiplayG,antiplayG,0]:
-                            cost = max(cost,30)
-                        elif sec==[0,antiplayG,playG,antiplayG]:
-                            cost = max(cost,10)
-                        elif x>0 and sec==[antiplayG,antiplayG,playG,0]:
-                            cost = max(cost,10)
-                        elif sec==[antiplayG,playG,playG,playG]:
-                            cost = max(cost,10)
+                 sec = sequence(a,x,y,i,j,4)
+                 if sec==[playG,antiplayG,antiplayG,antiplayG]:
+                    cost = max(cost,100)
+                 elif sec==[playG,antiplayG,antiplayG,antiplayG]:
+                    cost = max(cost,100)
+                 elif x>0 and y > 0 and sec==[antiplayG,playG,antiplayG,antiplayG]:
+                    cost = max(cost,100)
+                 elif  x> 0 and y> 0  and  sec==[antiplayG,antiplayG,playG,antiplayG]:
+                    cost = max(cost,100)
+                 elif sec==[playG,antiplayG,antiplayG,0]:
+                    cost = max(cost,30)
+                 elif sec==[0,antiplayG,playG,antiplayG]:
+                    cost = max(cost,10)
+                 elif x>0 and sec==[antiplayG,antiplayG,playG,0]:
+                    cost = max(cost,10)
+                 elif sec==[antiplayG,playG,playG,playG]:
+                    cost = max(cost,10)
 
 
 
@@ -297,7 +287,7 @@ def beginner_go(a,g):
     costL = {}
 
     if g == 2:
-           anti_g=1
+       anti_g=1
     else:
        anti_g=2;
 
@@ -315,8 +305,8 @@ def beginner_go(a,g):
     a[cX[best_strike], cY[best_strike]] = g;
     draw_go(cX[best_strike], cY[best_strike], g);
     moves.append((cX[best_strike], cY[best_strike]));        
-    cX=cY=costW=costL=[]
-#    print (f"{cX[best_strike]}, {cY[best_strike]}, {costW[best_strike]}")
+#    cX=cY=costW=costL=[]
+    print (f"({cX[best_strike]}, {cY[best_strike]}, {costW[best_strike]})")
     return (cX[best_strike], cY[best_strike], costW[best_strike])
 
 def impedance_go(a,g):
@@ -403,3 +393,24 @@ while True:
                                 print("win O");
       pygame.display.update()
 
+#for i in range(1500):
+#  while(not rand_go(a,1)):
+#     mmm=2
+
+#  beginner_go(a,1);    
+#  if (check_win(a) ==  1):
+#        print ("win X")
+#        break
+
+#  while not rand_go(a,2):   
+#    mm = 3
+#  beginner_go(a,2);    
+#  if (check_win(a) == 2 ):
+#        print ("win O")
+#        break
+ 
+ # print_p(a)
+#  print ("==================move ", i)
+
+#print("************last position******************************", i)
+#print_p(a)
